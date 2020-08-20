@@ -117,7 +117,7 @@ resource "google_compute_instance" "gcp_vm" {
   project = var.gcp_project_id
 
   network_interface {
-    network_ip         = coalesce(var.gcp_vm_ip_base, 255) == 255 ? "null" : google_compute_address.gcp_vm_internal_ip[count.index].address
+    network_ip         = coalesce(var.gcp_vm_ip_base, 255) == 255 ? null : google_compute_address.gcp_vm_internal_ip[count.index].address
     network            = var.gcp_project_network
     subnetwork         = var.gcp_project_subnetwork
     subnetwork_project = var.gcp_project_id
@@ -127,7 +127,7 @@ resource "google_compute_instance" "gcp_vm" {
         [
           {
             // we set null but it will never reached because the slice with 0 cut it off
-            "external_ip" = var.gcp_vm_need_external_ip ? google_compute_address.gcp_vm_external_ip[count.index].address : "null"
+            "external_ip" = var.gcp_vm_need_external_ip ? google_compute_address.gcp_vm_external_ip[count.index].address : null
           },
       ], 0, var.gcp_vm_need_external_ip ? 1 : 0)
       content {
@@ -150,8 +150,8 @@ resource "google_compute_instance" "gcp_vm" {
       [
         {
           // we set null but it will never reached because the slice with 0 cut it off
-          "attached_name"      = var.gcp_vm_attached_size > 0 ? element(google_compute_disk.gcp_vm_attached.*.name, count.index) : "null"
-          "attached_self_link" = var.gcp_vm_attached_size > 0 ? element(google_compute_disk.gcp_vm_attached.*.self_link, count.index) : "null"
+          "attached_name"      = var.gcp_vm_attached_size > 0 ? element(google_compute_disk.gcp_vm_attached.*.name, count.index) : null
+          "attached_self_link" = var.gcp_vm_attached_size > 0 ? element(google_compute_disk.gcp_vm_attached.*.self_link, count.index) : null
         },
     ], 0, var.gcp_vm_attached_size > 0 ? 1 : 0)
     content {
