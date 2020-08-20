@@ -72,7 +72,7 @@ variable "gcp_vm_enable_display" {
   default = false
 }
 variable "gcp_vm_ip_base" {
-  default = 0
+  default = null
 }
 variable "gcp_vm_machine_type" {
   default = "e2-small"

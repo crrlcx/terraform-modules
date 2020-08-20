@@ -66,7 +66,7 @@ resource "google_compute_disk" "gcp_vm_attached" {
 
 # Create internal ip
 resource "google_compute_address" "gcp_vm_internal_ip" {
-  count = length(var.gcp_vm_ip_base) != 0 ? var.gcp_vm_count : 0
+  count = coalesce(var.gcp_vm_ip_base, 255) == 255 ? 0 : var.gcp_vm_count
 
   name = "${var.gcp_vm_prefix}${format("%02d", count.index + 1)}-internal"
 
@@ -117,7 +117,7 @@ resource "google_compute_instance" "gcp_vm" {
   project = var.gcp_project_id
 
   network_interface {
-    network_ip         = length(var.gcp_vm_ip_base) != 0 ? google_compute_address.gcp_vm_internal_ip[count.index].address : "null"
+    network_ip         = coalesce(var.gcp_vm_ip_base, 255) == 255 ? "null" : google_compute_address.gcp_vm_internal_ip[count.index].address
     network            = var.gcp_project_network
     subnetwork         = var.gcp_project_subnetwork
     subnetwork_project = var.gcp_project_id
