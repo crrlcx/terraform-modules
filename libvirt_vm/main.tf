@@ -75,7 +75,7 @@ resource "libvirt_domain" "vm" {
   }
 
   network_interface {
-    addresses      = length(var.vm_ip_base) != 0 ? ["${var.ip_base}.${var.vm_ip_base + count.index + 1}"] : []
+    addresses      = coalesce(var.vm_ip_base, 255) == 255  ? null : ["${var.ip_base}.${var.vm_ip_base + count.index + 1}"]
     hostname       = "${var.vm_prefix}${format("%02d", count.index + 1)}.${var.project}"
     network_id     = var.network_id
     wait_for_lease = true
