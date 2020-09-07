@@ -20,7 +20,6 @@
 | base\_volume\_system | n/a | `any` | `null` | no |
 | ip\_base | Project | `any` | `null` | no |
 | ips | n/a | `any` | `null` | no |
-| libvirt\_uri | Provider | `any` | `null` | no |
 | network\_id | n/a | `any` | `null` | no |
 | pool | n/a | `any` | `null` | no |
 | project | n/a | `any` | `null` | no |

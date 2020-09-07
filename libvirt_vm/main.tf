@@ -9,11 +9,6 @@ terraform {
   required_version = ">= 0.13"
 }
 
-# Provider
-provider "libvirt" {
-  uri = var.libvirt_uri
-}
-
 # Create images from templates
 resource "libvirt_volume" "vm_boot" {
   count = var.vm_count

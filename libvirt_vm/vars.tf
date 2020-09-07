@@ -1,8 +1,3 @@
-# Provider
-variable "libvirt_uri" {
-  default = null
-}
-
 # Project
 variable "ip_base" {
   default = null
