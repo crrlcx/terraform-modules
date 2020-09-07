@@ -1,11 +1,3 @@
-# Provider variables
-variable "gcp_creds" {
-  default = null
-}
-// variable "gcp_creds_file" {
-//   default = "resources/google_account.json"
-// }
-
 # Project variables
 variable "gcp_project_id" {
   default = null

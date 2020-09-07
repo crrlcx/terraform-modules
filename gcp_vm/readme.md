@@ -15,7 +15,6 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| gcp\_creds | Provider variables | `any` | `null` | no |
 | gcp\_project\_id | Project variables | `any` | `null` | no |
 | gcp\_project\_ip\_base | n/a | `any` | `null` | no |
 | gcp\_project\_network | n/a | `any` | `null` | no |
@@ -36,7 +35,7 @@
 | gcp\_vm\_count | n/a | `number` | `0` | no |
 | gcp\_vm\_deletion\_protection | n/a | `bool` | `false` | no |
 | gcp\_vm\_enable\_display | n/a | `bool` | `false` | no |
-| gcp\_vm\_ip\_base | n/a | `number` | `0` | no |
+| gcp\_vm\_ip\_base | n/a | `any` | `null` | no |
 | gcp\_vm\_machine\_type | n/a | `string` | `"e2-small"` | no |
 | gcp\_vm\_need\_external\_ip | n/a | `bool` | `false` | no |
 | gcp\_vm\_network\_tags | n/a | `list` | `[]` | no |

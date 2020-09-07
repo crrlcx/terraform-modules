@@ -9,14 +9,6 @@ terraform {
   required_version = ">= 0.13"
 }
 
-# Provider
-provider "google" {
-  credentials = var.gcp_creds
-  // credentials = file(var.gcp_creds_file)
-  project = var.gcp_project_id
-  region  = var.gcp_project_region
-}
-
 # Data Sources
 data "google_compute_image" "boot_image" {
   project = var.gcp_vm_boot_image != "" ? var.gcp_vm_boot_image_project : "ubuntu-os-cloud"
