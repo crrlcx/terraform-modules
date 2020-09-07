@@ -13,3 +13,8 @@ Require terraform provider [dmacvicar/terraform-provider-libvirt](https://github
 
 Module creates a Google Cloud virtual machine.
 [README](gcp_vm/readme.md)
+
+## aws_route53_csv
+
+Module creates a AWS Route53 zone from a CSV files.
+[README](aws_route53_csv/readme.md)
