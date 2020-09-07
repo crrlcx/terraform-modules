@@ -1,15 +1,4 @@
-# Provider variables
-variable "aws_service_account" {
-  default = null
-}
-variable "aws_region" {
-  default = "us-west-1"
-}
-variable "aws_creds_file" {
-  default = null
-}
-
-# Project variables
+# Zone variables
 variable "aws_route53_zone" {
   default = "example.com."
 }

@@ -8,11 +8,6 @@ terraform {
   }
   required_version = ">= 0.13"
 }
-provider "aws" {
-  profile                 = var.aws_service_account
-  region                  = var.aws_region
-  shared_credentials_file = var.aws_creds_file
-}
 
 # Create local variables
 locals {
