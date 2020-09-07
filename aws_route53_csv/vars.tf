@@ -1,6 +1,6 @@
 # Zone variables
 variable "aws_route53_zone" {
-  default = "example.com."
+  default = "example.com"
 }
 variable "aws_route53_zone_comment" {
   default = "Managed by Terraform"

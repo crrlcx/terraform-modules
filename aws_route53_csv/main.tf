@@ -11,8 +11,8 @@ terraform {
 
 # Create local variables
 locals {
-  aws_route53_zone_healthchecks = fileexists("resources/aws_route53.${var.aws_route53_zone}healthchecks.csv") ? csvdecode(file("resources/aws_route53.${var.aws_route53_zone}healthchecks.csv")) : []
-  aws_route53_zone_records      = fileexists("resources/aws_route53.${var.aws_route53_zone}records.csv") ? csvdecode(file("resources/aws_route53.${var.aws_route53_zone}records.csv")) : []
+  aws_route53_zone_healthchecks = fileexists("resources/aws_route53.${var.aws_route53_zone}.healthchecks.csv") ? csvdecode(file("resources/aws_route53.${var.aws_route53_zone}.healthchecks.csv")) : []
+  aws_route53_zone_records      = fileexists("resources/aws_route53.${var.aws_route53_zone}.records.csv") ? csvdecode(file("resources/aws_route53.${var.aws_route53_zone}.records.csv")) : []
 }
 
 # Create DNS zones in AWS Route53
