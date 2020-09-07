@@ -1,1 +1,1 @@
-record_name,type,ttl,records,set_identifier,weighted_routing_policy,geolocation_routing_policy,failover_routing_policy
+record_name ,type ,ttl ,records ,set_identifier ,weighted_routing_policy ,geolocation_routing_policy ,failover_routing_policy

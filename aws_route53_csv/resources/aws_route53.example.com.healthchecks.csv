@@ -1,1 +1,1 @@
-record_name,type,address,port,invert_healthcheck,enable_sni,request_interval,failure_threshold,measure_latency,resource_path,search_string
+record_name ,type ,address ,port ,invert_healthcheck ,enable_sni ,request_interval ,failure_threshold ,measure_latency ,resource_path ,search_string
