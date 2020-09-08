@@ -43,7 +43,7 @@ resource "aws_route53_record" "SOA_record" {
   ttl             = 86400
   type            = "SOA"
   records = [
-    "${aws_route53_zone.dns_zone.name_servers[0]}. awsdns-hostmaster.amazon.com. ${var.aws_route53_zone_soa_serial} 14400 3600 604800 300"
+    "${aws_route53_zone.dns_zone.name_servers[0]}. awsdns-hostmaster.amazon.com. ${var.aws_route53_zone_soa_serial} 14400 3600 1209600 300"
   ]
   depends_on = [
     aws_route53_record.NS_record
