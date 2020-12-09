@@ -106,7 +106,7 @@ resource "aws_route53_record" "dns_records" {
   ttl             = each.value.ttl
   type            = each.value.type
 
-  health_check_id = each.value.failover_routing_policy != "" ? aws_route53_health_check.dns_healthchecks["${join("_", ["tcp", "443", each.value.record_name, aws_route53_zone.dns_zone.name])}"].id : null
+  health_check_id = each.value.failover_routing_policy != "" ? aws_route53_health_check.dns_healthchecks[join("_", ["tcp", "443", each.value.record_name, aws_route53_zone.dns_zone.name])].id : null
   set_identifier  = each.value.set_identifier != "" ? each.value.set_identifier : null
 
   dynamic "geolocation_routing_policy" {
