@@ -5,7 +5,7 @@ Terraform modules to include in terraform project
 ## libvirt_vm
 
 Module creates a Qemu-KVM virtual machine via Libvirt.
-Require terraform provider [dmacvicar/terraform-provider-libvirt](https://github.com/dmacvicar/terraform-provider-libvirt)
+Require terraform provider [dmacvicar/libvirt](https://github.com/dmacvicar/terraform-provider-libvirt)
 
 [README](libvirt_vm/readme.md)
 
