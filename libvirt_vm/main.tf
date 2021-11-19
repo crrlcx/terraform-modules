@@ -65,7 +65,7 @@ resource "libvirt_domain" "vm" {
   running    = var.vm_running
   vcpu       = var.vm_vcpu
 
-  cpu = {
+  cpu {
     mode = "host-model"
   }
 
