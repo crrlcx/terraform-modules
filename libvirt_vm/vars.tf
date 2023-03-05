@@ -37,7 +37,7 @@ variable "vm_data_size" {
   default = 0
 }
 variable "vm_ip_base" {
-  default = 0
+  default = null
 }
 variable "vm_memory" {
   default = 512

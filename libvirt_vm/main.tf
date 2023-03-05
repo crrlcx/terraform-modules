@@ -2,11 +2,11 @@
 terraform {
   required_providers {
     libvirt = {
-      source = "dmacvicar/libvirt"
-      version = ">= 0.6"
+      source  = "dmacvicar/libvirt"
+      version = "~> 0.7.0"
     }
   }
-  required_version = ">= 0.13"
+  required_version = "~> 1.3.0"
 }
 
 # Create images from templates
