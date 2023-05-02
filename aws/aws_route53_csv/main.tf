@@ -1,15 +1,4 @@
-# Providers
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 3.0"
-    }
-  }
-  required_version = ">= 0.13"
-}
-
-# Create local variables
+# Set local variables
 locals {
   aws_route53_zone_healthchecks = fileexists("resources/aws_route53.${var.aws_route53_zone}.healthchecks.csv") ? csvdecode(file("resources/aws_route53.${var.aws_route53_zone}.healthchecks.csv")) : []
   aws_route53_zone_records      = fileexists("resources/aws_route53.${var.aws_route53_zone}.records.csv") ? csvdecode(file("resources/aws_route53.${var.aws_route53_zone}.records.csv")) : []

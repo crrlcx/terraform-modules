@@ -1,14 +1,3 @@
-# Versions
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = ">= 3.0"
-    }
-  }
-  required_version = ">= 0.13"
-}
-
 # Data Sources
 data "google_compute_image" "boot_image" {
   project = var.gcp_vm_boot_image != "" ? var.gcp_vm_boot_image_project : "ubuntu-os-cloud"
