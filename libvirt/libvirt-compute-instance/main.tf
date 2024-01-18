@@ -46,9 +46,13 @@ resource "libvirt_domain" "vm" {
   count = var.vm_count
   name  = "${var.vm_prefix}${format("%02d", count.index + 1)}.${var.project}"
 
-  autostart  = var.vm_autostart
-  emulator   = "/usr/bin/kvm"
-  firmware   = "/usr/share/OVMF/OVMF_CODE.fd"
+  autostart = var.vm_autostart
+  emulator  = "/usr/bin/kvm"
+  firmware  = "/usr/share/OVMF/OVMF_CODE_4M.fd"
+  nvram {
+    file     = "/var/lib/libvirt/qemu/nvram/${var.vm_prefix}${format("%02d", count.index + 1)}.${var.project}_VARS.fd"
+    template = "/usr/share/OVMF/OVMF_VARS_4M.fd"
+  }
   machine    = "q35"
   memory     = var.vm_memory
   qemu_agent = true
